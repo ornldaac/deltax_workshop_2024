@@ -374,7 +374,7 @@ def get_input_files(AOI,aoi_dir,ref_dir,EPSG,bounds_4326):
     print('# Merging AGB tiles\n') #EPSG:4326++5733
     with open("%s/agb.txt" %(tmp_dir), 'w') as f:
         for item in agb_tifs:
-            f.write("%s\n" % item)
+            f.write("%s\n" % item) 
     os.system("gdalbuildvrt %s/agb.vrt -separate -input_file_list %s/agb.txt -q"
               %(tmp_dir,tmp_dir))
     vrt = rasterio.open('%s/agb.vrt' %(tmp_dir))
