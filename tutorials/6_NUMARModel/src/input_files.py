@@ -63,7 +63,7 @@ def calculate_belowground_biomass(AGB,mask, CLASSES,veg_e,bgb_agb):
     print('[[r0 ==> BELOWGROUND BIOMASS]]')
     # print('BGB = AGB * 0.2')
     print('BGB:AGB = 0.35 fresh marsh, 0.62 brackish marsh, and 1.26 saline marsh')
-    print('BGB at surface (r0) = (r50 * e)/(1-exp(e*50))')
+    print('BGB at surface (r0) = (r50 * e)/(1-exp(-e*50))')
     print('Attenuation rate (e) = 0.03 fresh marsh, 0.05 brackish marsh, and 0.0406 saline marsh')
     print('Units = g/cm2')
     print('#########################\n')    
@@ -352,8 +352,7 @@ def get_input_files(AOI,aoi_dir,ref_dir,EPSG,bounds_4326):
     lrx = ulx + width*transform[0]
     lry = uly + height*transform[4]
     res = profile['transform'][0]
-    tmp_dir = aoi_dir / 'TMP'
-    Path(tmp_dir).mkdir(parents=True, exist_ok=True)
+
     ##########################################################################################
     ## AVIRIS-NG Aboveground Biomass maps
     ## Units are Mg/Ha
