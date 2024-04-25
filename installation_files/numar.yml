@@ -16,4 +16,6 @@ dependencies:
   - scikit-learn
   - seaborn
   - spyder
+  - cartopy
+  - imageio
 prefix: 
