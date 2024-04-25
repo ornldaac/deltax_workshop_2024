@@ -1,0 +1,19 @@
+name: numar
+channels:
+  - conda-forge
+dependencies:
+  - earthaccess
+  - ipykernel
+  - jupyter
+  - numpy
+  - pandas
+  - rasterio
+  - scipy
+  - xarray
+  - geopandas
+  - netcdf4
+  - matplotlib
+  - scikit-learn
+  - seaborn
+  - spyder
+prefix: 
