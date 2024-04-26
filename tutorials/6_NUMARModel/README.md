@@ -16,4 +16,4 @@
 
 
 # Tutorial: 6B_Build-Run_NUMAR_LandscapeModel.ipynb
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/achri19/deltax_workshop_2024/blob/main/tutorials/6_NUMARModel/Landscape_example/6_Build-Run_NUMAR_model.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/achri19/deltax_workshop_2024/blob/main/tutorials/6_NUMARModel/Landscape_example/6B_Build-Run_NUMAR_LandscapeModel.ipynb)
