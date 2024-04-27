@@ -12,7 +12,7 @@
     - #### https://daac.ornl.gov/cgi-bin/dsviewer.pl?ds_id=2302
     
 # Tutorial: 6A_Build-Run_NUMAR_UnitModel.ipynb    
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ornldaac/deltax_workshop_2024/blob/main/tutorials/6_NUMARModel/Site_Example/6A_Build-Run_NUMAR_UnitModel.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ornldaac/deltax_workshop_2024/blob/main/tutorials/6_NUMARModel/Site_example/6A_Build-Run_NUMAR_UnitModel.ipynb)
 
 
 
