@@ -528,7 +528,7 @@ def get_input_files(AOI,aoi_dir,ref_dir,tmp_dir,EPSG,bounds_4326):
     ##########################################################################################
 
     A = np.where(BASINS == 1,0,np.where(BASINS==2,1,np.nan))
-    B = np.where( SALINITY == 3, 1,np.where((SALINITY==4) | (SALINITY ==5) , 2, np.where(SALINITY==6,3,np.nan)))
+    B = np.where( SALINITY == 3, 0,np.where((SALINITY==4) | (SALINITY ==5) , 1, np.where(SALINITY==6,2,np.nan)))
     CLASSES = ((A*3)+B).astype(int)
 
     ##########################################################################################
@@ -540,7 +540,7 @@ def get_input_files(AOI,aoi_dir,ref_dir,tmp_dir,EPSG,bounds_4326):
     if os.path.isfile(final_file)==False:
 
 
-        print('# Search EarthData for Delft3D Sediment Model Data over the AOI\n')
+        print('# Search EarthData for Delft3D Atchafalaya Sediment Model Data over the AOI\n')
         IMAR_search = earthaccess.search_data(short_name = 'DeltaX_Delft3D_Atchafalaya_MRD_2302',
                                     bounding_box = tuple(bounds_4326),
                                     granule_name = '*IMAR*')
@@ -554,10 +554,45 @@ def get_input_files(AOI,aoi_dir,ref_dir,tmp_dir,EPSG,bounds_4326):
         print('# Convert the Delft3D IMAR netCDF4 file to Geotiff\n')
         os.system('gdalwarp -q %s %s/%s.tif' %(morph_file,tmp_dir,filename))
         os.system('gdalwarp -q -t_srs epsg:%s %s/%s.tif %s/%s_%s.tif' %(EPSG,tmp_dir, filename,  tmp_dir, filename,EPSG))
+        
+        print('# Search EarthData for Delft3D Terrebonne Sediment Model Data over the AOI\n')
+        IMAR_search = earthaccess.search_data(short_name = 'DeltaX_Delft3D_Terrebonne_MRD_2301',
+                                    bounding_box = tuple(bounds_4326),
+                                    granule_name = '*IMAR*')
+        print('# Download IMAR Delft3D data products: \n')
+        download_files = earthaccess.download(IMAR_search[0], ref_dir) 
+
+        morph_file = [os.path.join(dirpath,f)
+            for dirpath,dirnames, files in os.walk(ref_dir)
+            for f in fnmatch.filter(files,'*IMAR*.nc4')][0]
+        filename = morph_file.split('/')[-1].split('.')[0]
+        print('# Convert the Delft3D IMAR netCDF4 file to Geotiff\n')
+        os.system('gdalwarp -q %s %s/%s.tif' %(morph_file,tmp_dir,filename))
+        os.system('gdalwarp -q -t_srs epsg:%s %s/%s.tif %s/%s_%s.tif' %(EPSG,tmp_dir, filename,  tmp_dir, filename,EPSG))
+
+        imar_tifs = [os.path.join(dirpath,f)
+            for dirpath,dirnames, files in os.walk(tmp_dir)
+            for f in fnmatch.filter(files,'*IMAR*_%s.tif' %(EPSG))]
+        print('# Merging IMAR tiles\n') #EPSG:4326++5733
+        with open("%s/imar.txt" %(tmp_dir), 'w') as f:
+            for item in imar_tifs:
+                f.write("%s\n" % item) 
+        os.system("gdalbuildvrt %s/imar.vrt -separate -input_file_list %s/imar.txt -q"
+                  %(tmp_dir,tmp_dir))
+        vrt = rasterio.open('%s/imar.vrt' %(tmp_dir))
+        p = vrt.profile
+        vrt = vrt.read()
+        vrt = np.where(vrt==-9999,np.nan,vrt)
+        avg = np.nanmean(vrt,axis=0)
+        p['count']=1
+        p['driver']='GTiff'
+        with rasterio.open(tmp_dir/'imar_mean.tif','w',**p) as dst:
+            dst.write_band(1,avg.astype(float))
+
         print('# Crop the Delft3D IMAR file to AOI and resample to %sm \n' %(res))
-        os.system('gdalwarp -overwrite -tr %s %s %s/%s_%s.tif %s '\
+        os.system('gdalwarp -overwrite -tr %s %s %s/imar_mean.tif %s '\
                 ' -te %s %s %s %s -srcnodata -9999 -dstnodata -9999 -co COMPRESS=DEFLATE -q'
-                %(res,res,tmp_dir, filename, EPSG,final_file,ulx,lry,lrx,uly))
+                %(res,res,tmp_dir,final_file,ulx,lry,lrx,uly))
         print('--> Saved as %s\n' %(final_file))
         print('')
 
@@ -582,7 +617,7 @@ def get_input_files(AOI,aoi_dir,ref_dir,tmp_dir,EPSG,bounds_4326):
     watermask = np.where(WATER ==0,1,np.nan)
     ##########################################################################################
     
-    mask = np.where((watermask == 1) & (CLASSES >0),1,np.nan)
+    mask = np.where((watermask == 1) & (CLASSES >=0),1,np.nan)
 
 
     return AGB, SALINITY, LANDCOVER, IMAR, BASINS, CLASSES, mask, lats, lons

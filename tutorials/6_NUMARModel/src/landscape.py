@@ -354,8 +354,11 @@ def run_numar(input_file_path,output_file_path):
                     # if (i!=0) & (i%10==0):
                     #     list4.append([site_id,lat, lon, i,list1[i][12], list1[i][12]/10, S_m_OM/list1[i][12], S_m_OM_C/list1[i][12], S_m_BD/list1[i][12], S_m_C_Seq/list1[i][12], S_m_OC_gPcc/list1[i][12], S_m_IM_P/list1[i][12], S_m_IM_Con/list1[i][12], S_necromass*100, S_root_Nr*100, (list1[i][27]+((list1[i][27]-list1[i][27])*(50-list1[i][12])/(list1[i][12]-list1[i][12])))])
                     #     # list4.append([site_id,lat, lon, 100,list1[-1][12], list1[-1][12]/100, S_m_OM/list1[-1][12], S_m_OM_C/list1[-1][12], S_m_BD/list1[-1][12], S_m_C_Seq/list1[-1][12], S_m_OC_gPcc/list1[-1][12], S_m_IM_P/list1[-1][12], S_m_IM_Con/list1[-1][12], S_necromass*100, S_root_Nr*100, (list1[-1][27]+((list1[-1][27]-list1[-2][27])*(50-list1[-1][12])/(list1[-1][12]-list1[-2][12])))])
-                for dec in np.arange(9,109,10):
-                    list4.append([site_id,lat, lon, dec+1,list1[dec][12], list1[dec][12]/dec, S_m_OM/list1[dec][12], S_m_OM_C/list1[dec][12], S_m_BD/list1[dec][12], S_m_C_Seq/list1[dec][12], S_m_OC_gPcc/list1[dec][12], S_m_IM_P/list1[dec][12], S_m_IM_Con/list1[dec][12], S_necromass*100, S_root_Nr*100, (list1[dec][27]+((list1[dec][27]-list1[dec-1][27])*(50-list1[dec][12])/(list1[dec][12]-list1[dec-1][12])))])
+                # for dec in np.arange(9,109,10):
+                    # list4.append([site_id,lat, lon, dec+1,list1[dec][12], list1[dec][12]/dec, S_m_OM/list1[dec][12], S_m_OM_C/list1[dec][12], S_m_BD/list1[dec][12], S_m_C_Seq/list1[dec][12], S_m_OC_gPcc/list1[dec][12], S_m_IM_P/list1[dec][12], S_m_IM_Con/list1[dec][12], S_necromass*100, S_root_Nr*100, (list1[dec][27]+((list1[dec][27]-list1[dec-1][27])*(50-list1[dec][12])/(list1[dec][12]-list1[dec-1][12])))])
+                list4.append([site_id,lat, lon, Age,list1[9][12],list1[19][12],list1[29][12],list1[39][12],
+                    list1[49][12],list1[59][12],list1[69][12],list1[79][12],list1[89][12],list1[-1][12],
+                    list1[-1][12]/100, S_m_OM/list1[-1][12], S_m_OM_C/list1[-1][12], S_m_BD/list1[-1][12], S_m_C_Seq/list1[-1][12], S_m_OC_gPcc/list1[-1][12], S_m_IM_P/list1[-1][12], S_m_IM_Con/list1[-1][12], S_necromass*100, S_root_Nr*100, (list1[-1][27]+((list1[-1][27]-list1[-2][27])*(50-list1[-1][12])/(list1[-1][12]-list1[-2][12])))])
                 # list4.append([site_id,lat, lon, 100,list1[-1][12], list1[-1][12]/100, S_m_OM/list1[-1][12], S_m_OM_C/list1[-1][12], S_m_BD/list1[-1][12], S_m_C_Seq/list1[-1][12], S_m_OC_gPcc/list1[-1][12], S_m_IM_P/list1[-1][12], S_m_IM_Con/list1[-1][12], S_necromass*100, S_root_Nr*100, (list1[-1][27]+((list1[-1][27]-list1[-2][27])*(50-list1[-1][12])/(list1[-1][12]-list1[-2][12])))])
     
                 if index%10000 == 0:
@@ -367,7 +370,10 @@ def run_numar(input_file_path,output_file_path):
                 print(f"An error occurred during calculation for site_id {site_id} lat {lat} long {lon}: {e}")
     list4 = list4[1:]
     # Convert list4 to a pandas DataFrame
-    summary_df = pd.DataFrame(list4, columns=['site_id','lat', 'long', 'Age_yr','Total Accretion (cm)', 'Mean Accretion (cm/yr)', 'Mean OM%', 'Mean OM Concentration (mg/cm3)', 'Mean BD (g/cm3)', 'C_Seq (g/m2/yr)', 'OC Concentration (mg/cm3)', 'IM(%)', 'IM Concentration (mg/cc)', 'Necromass (Mg/ha)', 'Root Necromass (Mg/ha)', 'Root Necromass Projected Up to 50 cm (Mg/ha)'])
+    summary_df = pd.DataFrame(list4, columns=['site_id','lat', 'long', 'Age_yr','Total Accretion 10yrs (cm)',
+    'Total Accretion 20yrs (cm)','Total Accretion 30yrs (cm)','Total Accretion 40yrs (cm)','Total Accretion 50yrs (cm)','Total Accretion 60yrs (cm)',
+    'Total Accretion 70yrs (cm)','Total Accretion 80yrs (cm)','Total Accretion 90yrs (cm)','Total Accretion 100yrs (cm)',
+     'Mean Accretion (cm/yr)', 'Mean OM%', 'Mean OM Concentration (mg/cm3)', 'Mean BD (g/cm3)', 'C_Seq (g/m2/yr)', 'OC Concentration (mg/cm3)', 'IM(%)', 'IM Concentration (mg/cc)', 'Necromass (Mg/ha)', 'Root Necromass (Mg/ha)', 'Root Necromass Projected Up to 50 cm (Mg/ha)'])
 
     # Define the output folder
     # output_folder = os.path.join(main_folder, "output_files", "summary_LSU_3")
