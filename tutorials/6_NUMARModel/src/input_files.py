@@ -617,7 +617,7 @@ def get_input_files(AOI,aoi_dir,ref_dir,tmp_dir,EPSG,bounds_4326):
     watermask = np.where(WATER ==0,1,np.nan)
     ##########################################################################################
     
-    mask = np.where((watermask == 1) & (CLASSES >=0),1,np.nan)
+    mask = np.where((watermask == 1) & (CLASSES <=6),1,np.nan)
 
 
     return AGB, SALINITY, LANDCOVER, IMAR, BASINS, CLASSES, mask, lats, lons
