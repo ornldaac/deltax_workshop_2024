@@ -24,8 +24,8 @@ import urllib.request
 
 def calculate_belowground_biomass(AGB,mask, CLASSES,veg_e,bgb_agb):
     #b0  = 0.1154 * np.ones((height,width))        ## g cm-3	Bulk density of organic matter 
-    BGB_AGB_ratio = bgb_agb[CLASSES]
-    e = veg_e[CLASSES]
+    BGB_AGB_ratio = bgb_agb[CLASSES]*mask
+    e = veg_e[CLASSES]*mask
     r0 = ((AGB/1000*BGB_AGB_ratio)*e)/(1-np.exp(-e*50))
     # BGB = (AGB / 0.2) * landmask #(mg/ha)
     print('#########################')
@@ -39,7 +39,7 @@ def calculate_belowground_biomass(AGB,mask, CLASSES,veg_e,bgb_agb):
     return r0*mask
 
 def calculate_organicmatter_loading(si, CLASSES,mask,oms_si):
-    oms = oms_si[CLASSES]*si
+    oms = oms_si[CLASSES]*si*mask
     print('#########################')
     print('[[oms ==> ORGANIC MASS ACCUMULATION RATE]]')
     print('Units = g/cm2/yr')
