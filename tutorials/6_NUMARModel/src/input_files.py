@@ -244,7 +244,7 @@ def get_input_files(AOI,aoi_dir,ref_dir,tmp_dir,EPSG,bounds_4326):
 
     A = np.where(BASINS == 1,0,np.where(BASINS==2,1,np.nan))
     B = np.where( SALINITY == 3, 0,np.where((SALINITY==4) | (SALINITY ==5) , 1, np.where(SALINITY==6,2,np.nan)))
-    CLASSES = ((A*3)+B).astype(int)
+    CLASSES = ((A*3)+B)
 
     ##########################################################################################
     ## mineral deposition results from hydro/morphodynamic models
