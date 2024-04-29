@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "aoi_4326",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -91.462055448439656, 29.684133579546483 ], [ -90.786271086834702, 29.554681380407867 ], [ -90.803823927395868, 29.06759005483546 ], [ -91.560790176596228, 29.341853188603707 ], [ -91.462055448439656, 29.684133579546483 ] ] ] ] } }
+]
+}
