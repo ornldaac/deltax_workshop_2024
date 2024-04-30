@@ -4,8 +4,7 @@ WIP: Please contact Jess Welch (welchjn@ornl.gov) or Matt Donovan (donovanmt@orn
 
 # Delta-X Applications Workshop
 May 8-9, 2024  
-The Estuary at the Water Campus  
-1110 S River Rd, Baton Rouge, LA 70802
+In-person registration is closed, but virtual registration is available [here](https://forms.gle/zZ7ZrnjPGCow6Kbt9).  
 
 ## Workshop Instructions
 See [this](https://docs.google.com/document/d/1vlykr5kp8t-2cXk17LA2tKUy97WKpe-J/) Google Doc that is being updated periodically. 
