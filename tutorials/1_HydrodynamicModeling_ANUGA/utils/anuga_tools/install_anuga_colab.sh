@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cd /utils
-
 echo "(1) Install pip packages"
 pip -q install numpy==1.23 scipy mpi4py scikit-image pandas gmsh-interop triangle rasterio geopandas ipyleaflet ipywidgets cmocean statsmodels dataretrieval noaa_coops utm Cython > /dev/null 2>&1 
 
