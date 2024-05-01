@@ -22,6 +22,7 @@ cd anuga_core
 python setup.py --quiet build  > /dev/null 2>&1 
 python setup.py --quiet install  > /dev/null 2>&1 
 cd ../
+rm -rf anuga_core
 
 echo "(7) Download dorado github repository"
 git clone --quiet https://github.com/passaH2O/dorado.git  > /dev/null 2>&1 
@@ -31,5 +32,6 @@ cd dorado
 python setup.py --quiet build  > /dev/null 2>&1 
 python setup.py --quiet install  > /dev/null 2>&1 
 cd ../
+rm -rf dorado
 
 echo "(9) Ready to go"
