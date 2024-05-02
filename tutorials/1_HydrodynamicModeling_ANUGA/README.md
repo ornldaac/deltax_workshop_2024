@@ -7,9 +7,9 @@ Division 334F, Caltech - Jet Propulsion Laboratory
 4800 Oak Grove Drive, Pasadena, CA, USA 91109-8099
 Contact: antoine.soloy@jpl.nasa.gov
 
-### Notebook Description:
+### Notebook Series Description:
 
-The present notebook is the first one in a series of five on how to use the ANUGA hydrodynamic model to generate simple simulations of coastal esturarine systems, including:
+The present series of notebooks presents how to use the ANUGA hydrodynamic model to generate simple simulations of coastal esturarine systems.  
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/soloyant/deltax_workshop_2024/blob/main/tutorials/1_HydrodynamicModeling_ANUGA/[1]ANUGA_DEM_processing.ipynb)[1]ANUGA_DEM_preprocessing.ipynb : Modifications to the Digital Elevation Model to optimize hydrological connectivity.  
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/soloyant/deltax_workshop_2024/blob/main/tutorials/1_HydrodynamicModeling_ANUGA/[2]ANUGA_friction_map_generation.ipynb)[2]ANUGA_friction_map_generation.ipynb : Generation of a land & water classification map for friction calibration purpose.  
