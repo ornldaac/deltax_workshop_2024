@@ -360,4 +360,4 @@ dependencies:
       - widgetsnbextension==4.0.10
       - xyzservices==2024.4.0
       - zeep==4.2.1
-prefix: /opt/anaconda3/envs/anuga_dx
+prefix:
