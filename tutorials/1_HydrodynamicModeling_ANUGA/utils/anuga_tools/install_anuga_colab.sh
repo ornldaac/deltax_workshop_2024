@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "(1) Install pip packages"
-pip -q install numpy==1.23 scipy mpi4py scikit-image pandas gmsh-interop triangle rasterio geopandas ipyleaflet ipywidgets cmocean statsmodels dataretrieval noaa_coops utm Cython > /dev/null 2>&1 
+pip -q install dill gitpython meshpy netcdf4 Pmw pymetis numpy==1.23 scipy mpi4py scikit-image pandas gmsh-interop triangle rasterio geopandas ipyleaflet ipywidgets cmocean statsmodels dataretrieval noaa_coops utm Cython > /dev/null 2>&1 
 
 echo "(2) Install gdal"
 apt-get -q -y install python-gdal gdal-bin  > /dev/null 2>&1 
