@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import os
 import utm
+import sys
 
 # Define the path to scripts and data
 workshop_dir = os.getcwd()
