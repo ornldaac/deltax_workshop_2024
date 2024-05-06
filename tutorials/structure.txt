@@ -1,7 +1,0 @@
-folder structure
-1_HydrodynamicModeling_ANUGA
-2_SedimentTransport_Dorado
-3_HydrodynamicModeling_Delft3D
-4_MorphodynamicModeling_Delft3D
-5_SedimentTransport
-6_NUMARModel
