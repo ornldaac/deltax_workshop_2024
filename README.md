@@ -4,8 +4,7 @@ WIP: Please contact Jess Welch (welchjn@ornl.gov) or Matt Donovan (donovanmt@orn
 
 # Delta-X Applications Workshop
 May 8-9, 2024  
-The Estuary at the Water Campus  
-1110 S River Rd, Baton Rouge, LA 70802
+In-person registration is closed, but virtual registration is available [here](https://forms.gle/zZ7ZrnjPGCow6Kbt9).  
 
 ## Workshop Instructions
 See [this](https://docs.google.com/document/d/1vlykr5kp8t-2cXk17LA2tKUy97WKpe-J/) Google Doc that is being updated periodically. 
@@ -16,7 +15,7 @@ See [this](https://docs.google.com/document/d/1vlykr5kp8t-2cXk17LA2tKUy97WKpe-J/
 | - | - | - | - |
 | 8:00-8:30 | Meet & Greet  |  |  |
 | 8:30-9:30 |  Introduction | Marc Simard, Cathleen Jones, Yang Zheng |  |
-| 9:30-9:45 | Hydrodynamic Modeling with ANUGA: Introduction | Antoine Soloy |  |
+| 9:30-9:45 | Hydrodynamic Modeling with ANUGA: Introduction | Antoine Soloy | [install](installation_files/anuga_dorado.yml), [slides](slides/1_HydrodynamicModeling_ANUGA.pptx), [tutorials](tutorials/1_HydrodynamicModeling_ANUGA) |
 | 9:45-10:00  | Break  |  |  |
 | 10:00-12:00 | Hydrodynamic Modeling with ANUGA: Model Run | Antoine Soloy |  |
 | 12:00-13:30  | Lunch  |  |  |
