@@ -18,4 +18,5 @@ dependencies:
   - spyder
   - cartopy
   - imageio
+  - gdal
 prefix: 
