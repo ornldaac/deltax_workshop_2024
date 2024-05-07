@@ -84,6 +84,66 @@ def draw_line_and_polygon_interaction(filename="line_within_polygon.shp", epsg=3
     
     display(map_view, save_button, output)
 
+def draw_points_in_polygon(filename="points_in_polygon.shp", epsg=32615, domain_polygon=None):
+    center = (29.5, -91.3)  # Default center
+    zoom = 8  # Default zoom level
+    
+    # Create the map view
+    map_view = create_map(center, zoom)
+    draw_control = setup_draw_control_points()
+    map_view.add_control(draw_control)
+    
+    # Display the existing polygon
+    display_existing_polygon(map_view, domain_polygon)
+    
+    # Convert domain_polygon to a Shapely Polygon if it's a numpy array
+    if isinstance(domain_polygon, np.ndarray):
+        polygon_shape = Polygon([(x, y) for x, y in domain_polygon])
+    elif isinstance(domain_polygon, Polygon):
+        polygon_shape = domain_polygon
+    else:
+        raise ValueError("Invalid domain_polygon type.")
+    
+    all_points = []  # List to store all drawn points
+    
+    # Button to save drawn points to shapefile
+    save_button = ipyw.Button(description="Save Points to Shapefile")
+    output = ipyw.Output()
+    
+    def on_button_clicked(b):
+        with output:
+            clear_output(wait=True)
+            print(f"Trying to save {len(all_points)} points...")  # Debugging output
+            if all_points:  # Check if there are any points collected
+                valid_points = MultiPoint([p for p in all_points if polygon_shape.contains(p)])
+                if not valid_points.is_empty:
+                    save_to_shapefile(filename, valid_points, epsg)
+                else:
+                    print("No points are within the polygon.")
+            else:
+                print("No points drawn. Please draw some points within the polygon.")
+
+    def handle_draw(target, action, geo_json):
+        # Extract point from draw event geo_json
+        coords = geo_json['geometry']['coordinates']
+        point = Point(coords[0], coords[1])
+        all_points.append(point)  # Add the new point to the list
+        print(f"Point {point} added.")  # Debugging output
+
+    draw_control.on_draw(handle_draw)
+    save_button.on_click(on_button_clicked)
+    
+    display(map_view, save_button, output)
+
+
+def setup_draw_control_points():
+    draw_control = DrawControl()
+    draw_control.marker = {
+        "shapeOptions": {"color": "#ff7800"},
+        "repeatMode": True
+    }
+    return draw_control
+
 def create_map(center, zoom):
     """Create and return a map centered on the given coordinates."""
     return ileaf.Map(center=center, zoom=zoom)
