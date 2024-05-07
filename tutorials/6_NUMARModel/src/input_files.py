@@ -13,6 +13,7 @@ import os
 import fnmatch
 import earthaccess
 import urllib.request
+from pathlib import Path
 
 
 def calculate_belowground_biomass(AGB,mask, CLASSES,veg_e,bgb_agb):
@@ -42,8 +43,9 @@ def calculate_organicmatter_loading(si, CLASSES,mask,oms_si):
 
 
 def get_input_files(AOI,aoi_dir,tmp_dir,EPSG,bounds_4326):
-	
-    # earthaccess.login()
+
+    Path(tmp_dir).mkdir(parents=True, exist_ok=True)
+
     ## Input Files
     ## Should be EPSG 4326
     profile = AOI.profile
@@ -164,7 +166,7 @@ def get_input_files(AOI,aoi_dir,tmp_dir,EPSG,bounds_4326):
 
         files = [os.path.join(dirpath,f)
             for dirpath,dirnames, files in os.walk(aoi_dir)
-            for f in fnmatch.filter(files,'*%s*.nc4' %(variable))][0]
+            for f in fnmatch.filter(files,'*Atchafalaya*%s*.nc4' %(variable))][0]
         filename = files.split('/')[-1].split('.')[0]
         print('# Convert the Delft3D IMAR netCDF4 file to Geotiff\n')
         os.system('gdalwarp -q %s %s/%s.tif' %(files,tmp_dir,filename))
@@ -179,7 +181,7 @@ def get_input_files(AOI,aoi_dir,tmp_dir,EPSG,bounds_4326):
 
         files = [os.path.join(dirpath,f)
             for dirpath,dirnames, files in os.walk(aoi_dir)
-            for f in fnmatch.filter(files,'*%s*.nc4' %(variable))][0]
+            for f in fnmatch.filter(files,'*Terrebonne*%s*.nc4' %(variable))][0]
         filename = files.split('/')[-1].split('.')[0]
         print('# Convert the %s %s file to Geotiff\n' %(source, variable))
         os.system('gdalwarp -q %s %s/%s.tif' %(files,tmp_dir,filename))
