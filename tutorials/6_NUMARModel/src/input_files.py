@@ -11,7 +11,7 @@ import numpy as np
 import rasterio
 import os
 import fnmatch
-import earthaccess
+# import earthaccess
 import urllib.request
 from pathlib import Path
 
