@@ -22,8 +22,7 @@ See [this](https://docs.google.com/document/d/1vlykr5kp8t-2cXk17LA2tKUy97WKpe-J/
 | 13:30-14:30 | Hydrodynamic Modeling with ANUGA: Simulations | Antoine Soloy | [install](installation_files/anuga_dorado.yml), [tutorials](tutorials/1_HydrodynamicModeling_ANUGA) |
 | 14:30-15:15 | Demonstration of Dorado Sediment Transport | Muriel Brückner, Antoine Soloy |    |
 | 15:15-15:30 | Break  |  |  |
-| 15:30-17:00 | Demonstration of Dorado Sediment Transport | Muriel Brückner, Antoine Soloy | [install](installation_files/anuga_dorado.yml), [tutorials](tutorials/2_SedimentTransport_Dorado) |
-| 17:00-14:30 | Hands-On Exercises & Discussions | Muriel Brückner, Antoine Soloy |  |
+| 15:30-17:30 | Demonstration of Dorado Sediment Transport | Muriel Brückner, Antoine Soloy | [install](installation_files/anuga_dorado.yml), [tutorials](tutorials/2_SedimentTransport_Dorado) |
 
 ### May 9
 | Time | Topic | Presenter | Quick Links |
