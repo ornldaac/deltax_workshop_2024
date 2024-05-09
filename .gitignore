@@ -1,2 +1,2 @@
-
-tutorials/6_NUMARModel/.DS_Store
+# Ignore all files starting with a dot
+**/.*
