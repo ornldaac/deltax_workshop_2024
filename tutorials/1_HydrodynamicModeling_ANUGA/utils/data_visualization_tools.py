@@ -41,7 +41,7 @@ def convert_seconds(sec):
     days, hours = divmod(int(hours), 24)
     return f"{int(days)} days, {int(hours):02}:{int(minutes):02}:{int(seconds):02}"
 
-def animate_stage(saved_output, domain_polygon, gauge_location_ind = None, gauge_time = None, gauge_stage = None, bg_img_filepath = None, fps = 5, initial_frame = 0, final_frame = 1, framestep = 1, dpi = 150, save = False, filename = 'stage.mp4'):
+def animate_stage(saved_output, domain_polygon = None, gauge_location_ind = None, gauge_time = None, gauge_stage = None, bg_img_filepath = None, fps = 5, initial_frame = 0, final_frame = 1, framestep = 1, dpi = 150, save = False, filename = 'stage.mp4'):
     
     frames = np.arange(initial_frame, final_frame, framestep)
     
@@ -50,12 +50,16 @@ def animate_stage(saved_output, domain_polygon, gauge_location_ind = None, gauge
     if save:
         pbar_save = notebook.tqdm(total=len(frames), file=sys.stdout, desc='Saving...')
     
-    total_ylim = np.array([np.nanmin(domain_polygon[:,1]), np.nanmax(domain_polygon[:,1])])
-    total_xlim = np.array([np.nanmin(domain_polygon[:,0]), np.nanmax(domain_polygon[:,0])])
-
     x = saved_output['x'][:].data+saved_output.xllcorner
     y = saved_output['y'][:].data+saved_output.yllcorner
     triangles = saved_output['volumes'][:,:].data
+
+    if domain_polygon is not None:
+        total_ylim = np.array([np.nanmin(domain_polygon[:,1]), np.nanmax(domain_polygon[:,1])])
+        total_xlim = np.array([np.nanmin(domain_polygon[:,0]), np.nanmax(domain_polygon[:,0])])
+    else:
+        total_ylim = np.array([np.nanmin(y), np.nanmax(y)])
+        total_xlim = np.array([np.nanmin(x), np.nanmax(x)])
     
     Npt = x.shape[0]
     if gauge_time is None:
@@ -157,8 +161,12 @@ def animate_velocity(saved_output, domain_polygon, querry_xy_inds, colormap = 't
     if save:
         pbar_save = notebook.tqdm(total=len(frames), file=sys.stdout, desc='Saving...')
     
-    total_ylim = np.array([np.nanmin(domain_polygon[:,1]), np.nanmax(domain_polygon[:,1])])
-    total_xlim = np.array([np.nanmin(domain_polygon[:,0]), np.nanmax(domain_polygon[:,0])])
+    if domain_polygon is not None:
+        total_ylim = np.array([np.nanmin(domain_polygon[:,1]), np.nanmax(domain_polygon[:,1])])
+        total_xlim = np.array([np.nanmin(domain_polygon[:,0]), np.nanmax(domain_polygon[:,0])])
+    else:
+        total_ylim = np.array([np.nanmin(y), np.nanmax(y)])
+        total_xlim = np.array([np.nanmin(x), np.nanmax(x)])
 
     x = saved_output['x'][:].data+saved_output.xllcorner
     y = saved_output['y'][:].data+saved_output.yllcorner
