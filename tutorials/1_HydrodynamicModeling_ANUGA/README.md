@@ -38,5 +38,4 @@ Please ensure that all the following datasets were downloaded and placed into th
     - #### Citation: Christensen, A.L., Soloy, A., Savelli, R., Moritz, J.M., & Simard, M. (2023b). Centerlines of the Mississippi River (V1.0) [Data file]. Retrieved from https://landscape.jpl.nasa.gov/cgi-bin/data-search.pl
 
 - #### CRMS water level gauges
-    - #### Download link: https://drive.google.com/file/d/18qINc-Xpus0g7cvsQT-BzH9KWgC35rFU/view?usp=drive_link (workshop sample)
     - #### Citation: Coastal Protection and Restoration Authority (CPRA) of Louisiana. 2024. Coastwide Reference Monitoring System-Wetlands Monitoring Data. Retrieved from Coastal Information Management System (CIMS) database. http://cims.coastal.louisiana.gov. Accessed 24 January 2024
