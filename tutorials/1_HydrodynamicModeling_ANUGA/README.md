@@ -11,11 +11,11 @@ Contact: antoine.soloy@jpl.nasa.gov
 
 This series of notebooks is an introduction to the implementation of hydrodynamic models to simulate the flow of water in complex vegetated estuarine and deltaic environments. The ANUGA hydrodynamic model is used for demonstration purpose, and applied to a user-defined subregion of interest in the Mississippi River Delta, LA, USA.  
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/soloyant/deltax_workshop_2024/blob/main/tutorials/1_HydrodynamicModeling_ANUGA/[1]ANUGA_DEM_processing.ipynb)[1]ANUGA_DEM_preprocessing.ipynb : Modifications to the Digital Elevation Model to optimize hydrological connectivity.  
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/soloyant/deltax_workshop_2024/blob/main/tutorials/1_HydrodynamicModeling_ANUGA/[2]ANUGA_friction_map_generation.ipynb)[2]ANUGA_friction_map_generation.ipynb : Generation of a land & water classification map for friction calibration purpose.  
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/soloyant/deltax_workshop_2024/blob/main/tutorials/1_HydrodynamicModeling_ANUGA/[3]ANUGA_model_run.ipynb)[3]ANUGA_model_run.ipynb : Setting up of the hydrodynamic model and run.  
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/soloyant/deltax_workshop_2024/blob/main/tutorials/1_HydrodynamicModeling_ANUGA/[4]ANUGA_output_analysis.ipynb)[4]ANUGA_output_analysis.ipynb : Output reading and generation of animations.  
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/soloyant/deltax_workshop_2024/blob/main/tutorials/1_HydrodynamicModeling_ANUGA/[5]ANUGA_model_validation.ipynb)[5]ANUGA_model_validation.ipynb : Comparison between in-situ/remote sensing data and model predictions.  
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ornldaac/deltax_workshop_2024/blob/main/tutorials/1_HydrodynamicModeling_ANUGA/[1]ANUGA_DEM_processing.ipynb)[1]ANUGA_DEM_preprocessing.ipynb : Modifications to the Digital Elevation Model to optimize hydrological connectivity.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ornldaac/deltax_workshop_2024/blob/main/tutorials/1_HydrodynamicModeling_ANUGA/[2]ANUGA_friction_map_generation.ipynb)[2]ANUGA_friction_map_generation.ipynb : Generation of a land & water classification map for friction calibration purpose.  
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ornldaac/deltax_workshop_2024/blob/main/tutorials/1_HydrodynamicModeling_ANUGA/[3]ANUGA_model_run.ipynb)[3]ANUGA_model_run.ipynb : Setting up of the hydrodynamic model and run.  
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ornldaac/deltax_workshop_2024/blob/main/tutorials/1_HydrodynamicModeling_ANUGA/[4]ANUGA_output_analysis.ipynb)[4]ANUGA_output_analysis.ipynb : Output reading and generation of animations.  
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ornldaac/deltax_workshop_2024/blob/main/tutorials/1_HydrodynamicModeling_ANUGA/[5]ANUGA_model_validation.ipynb)[5]ANUGA_model_validation.ipynb : Comparison between in-situ/remote sensing data and model predictions.  
 
 ### Necessary Datasets:
 
@@ -38,5 +38,5 @@ Please ensure that all the following datasets were downloaded and placed into th
     - #### Citation: Christensen, A.L., Soloy, A., Savelli, R., Moritz, J.M., & Simard, M. (2023b). Centerlines of the Mississippi River (V1.0) [Data file]. Retrieved from https://landscape.jpl.nasa.gov/cgi-bin/data-search.pl
 
 - #### CRMS water level gauges
-    - #### Download link: https://drive.google.com/file/d/1WjOSv8XcYZwkN_-oPdsdXH_5Lg2zcp5x/view?usp=drive_link (workshop sample)
+    - #### Download link: https://drive.google.com/file/d/18qINc-Xpus0g7cvsQT-BzH9KWgC35rFU/view?usp=drive_link (workshop sample)
     - #### Citation: Coastal Protection and Restoration Authority (CPRA) of Louisiana. 2024. Coastwide Reference Monitoring System-Wetlands Monitoring Data. Retrieved from Coastal Information Management System (CIMS) database. http://cims.coastal.louisiana.gov. Accessed 24 January 2024
