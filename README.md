@@ -25,7 +25,7 @@ _Muriel Brückner, Antoine Soloy_
 _Ali Payandeh_  
 * [slides](slides/HydrodynamicMorphodynamic_Delf3d.pdf)
 
-## Sediment Transport Model
+## Sediment Transport Model in MATLAB
 _Dongchen Wang_  
 * [slides](slides/SedimentTransport_MATLAB.pdf)
 
