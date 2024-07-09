@@ -1,4 +1,4 @@
-# Delta-X Applications Workshop
+# 2024 Delta-X Applications Workshop
 NASA's Delta-X Science Team conducted its Applications Workshop May 8-9, 2024. The scientists introduced Delta-X models and demonstrated how to incorporate field and airborne remote sensing datasets for model calibration and validation. The workshop materials can be accessed here or at the associated NASA's Oak Ridge National Laboratory Distributed Active Archive Center (ORNL DAAC) [Learning page](https://daac.ornl.gov/resources/tutorials/2024_deltax_workshop/).
 
 ## Workshop Instructions
