@@ -2,7 +2,7 @@
 NASA's Delta-X Science Team conducted its Applications Workshop May 8-9, 2024. The scientists introduced Delta-X models and demonstrated how to incorporate field and airborne remote sensing datasets for model calibration and validation. The workshop materials can be accessed here or at the associated NASA's Oak Ridge National Laboratory Distributed Active Archive Center (ORNL DAAC) [Learning page](https://daac.ornl.gov/resources/tutorials/2024_deltax_workshop/).
 
 ## Workshop Instructions
-See [these]() instructions for how to execute the installation files and complete the tutorials. All necessary materials are in this repository, linked to its source, or in [Zenodo](https://zenodo.org/records/12519229).  
+See [these](https://github.com/ornldaac/deltax_workshop_2024/blob/main/2024_DeltaX_Applications_Workshop_Instructions.pdf) instructions for how to execute the installation files and complete the tutorials. All necessary materials are in this repository, linked to its source, or in [Zenodo](https://zenodo.org/records/12519229).  
 
 ## Introduction & Data Overview
 _Marc Simard, Cathleen Jones, Yang Zheng_  
